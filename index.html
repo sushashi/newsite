@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#b8e7ed" />
+    <meta name="description" content="Help Waddles collect fish and dodge snowballs in a tiny, silly penguin game." />
+    <title>Waddles on Ice — a tiny penguin game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="masthead">
+        <p class="eyebrow">A tiny game about a very slippery bird</p>
+        <h1>Waddles <span>on Ice</span></h1>
+        <p class="intro">The fish are free. The snowballs have opinions.</p>
+      </header>
+
+      <section class="game-card" aria-label="Waddles on Ice game">
+        <div class="hud" aria-live="polite">
+          <div class="hud-item"><span class="hud-label">Fish</span><strong id="score">0</strong></div>
+          <div class="hud-item lives-item"><span class="hud-label">Waddles left</span><strong id="lives">♥ ♥ ♥</strong></div>
+          <div class="hud-item best-item"><span class="hud-label">Best</span><strong id="best">0</strong></div>
+        </div>
+
+        <div class="stage-wrap">
+          <canvas id="game" width="800" height="480" aria-label="Penguin game. Use arrow keys or WASD to move, or use the directional buttons below."></canvas>
+          <div class="overlay" id="overlay">
+            <div class="overlay-card">
+              <span class="seal" aria-hidden="true">🐧</span>
+              <p class="overlay-kicker" id="overlay-kicker">Ready, flippers?</p>
+              <h2 id="overlay-title">Slide into it!</h2>
+              <p id="overlay-copy">Collect the fish. Dodge the snowballs.<br />Try not to look too dignified.</p>
+              <button class="primary-button" id="start-button" type="button">Let’s waddle</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-footer">
+          <p class="desktop-hint"><kbd>←</kbd> <kbd>↑</kbd> <kbd>↓</kbd> <kbd>→</kbd> or <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to scoot</p>
+          <p class="mobile-hint">Use the flipper buttons to scoot</p>
+          <button id="sound-button" class="sound-button" type="button" aria-pressed="false" title="Toggle sound">Sound: off</button>
+        </div>
+      </section>
+
+      <nav class="touch-controls" aria-label="Touch movement controls">
+        <button class="touch-key up" data-direction="up" aria-label="Move up">▲</button>
+        <button class="touch-key left" data-direction="left" aria-label="Move left">◀</button>
+        <button class="touch-key down" data-direction="down" aria-label="Move down">▼</button>
+        <button class="touch-key right" data-direction="right" aria-label="Move right">▶</button>
+      </nav>
+      <p class="tiny-note">No penguins were asked to do math for this game.</p>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
